@@ -1,0 +1,22 @@
+# Optional view snippet for your own real entities.
+# REPLACE every *_replace_me entity ID before use.
+# These are normal interactive HA controls: using them can control your devices.
+title: Native cards
+path: native-cards
+theme: Amazing
+type: masonry
+cards:
+  - type: tile
+    entity: light.example_replace_me
+    name: Valo
+  - type: entities
+    title: Huone
+    show_header_toggle: false
+    entities:
+      - entity: switch.example_replace_me
+      - entity: sensor.temperature_replace_me
+  - type: thermostat
+    entity: climate.example_replace_me
+  - type: weather-forecast
+    entity: weather.example_replace_me
+    forecast_type: daily

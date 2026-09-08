@@ -1,0 +1,35 @@
+# Complete standalone demo dashboard: native cards, no entities or services.
+# Use in a NEW manual dashboard's raw configuration editor.
+# Do not replace an existing dashboard with this example.
+title: Amazing demo
+views:
+  - title: Amazing
+    path: amazing
+    theme: Amazing
+    type: masonry
+    cards:
+      - type: markdown
+        title: Amazing
+        content: |
+          ## Syvä sininen. Rauhallinen koti.
+          Alkuperäisen Amazing Weather Cardin värit koko näkymässä.
+
+          Tämä on demosisältöä. Kortit eivät käytä kodin laitteita.
+      - type: markdown
+        title: Olohuone · esimerkki
+        content: |
+          # 21,5 °C
+          Mukava sisälämpötila
+
+          | Mittaus | Esimerkkiarvo |
+          | :--- | ---: |
+          | Kosteus | 44 % |
+          | Valaistus | 65 % |
+      - type: markdown
+        title: Typografia ja pinnat
+        content: |
+          Tavallinen teksti, **vahvistettu teksti** ja `koodiesimerkki`.
+
+          [Home Assistantin teemaohje](https://www.home-assistant.io/integrations/frontend/)
+
+          > Himmeät reunat erottavat kortit. Säätimissä käytetään selkeämpää reunaa.

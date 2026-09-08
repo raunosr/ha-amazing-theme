@@ -1,0 +1,14 @@
+{
+  "name": "ha-amazing-theme",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Navy and mint Home Assistant theme inspired by Amazing Weather Card",
+  "license": "MIT",
+  "scripts": {
+    "validate": "node scripts/validate.cjs",
+    "preview:build": "node scripts/build-preview.cjs"
+  },
+  "devDependencies": {
+    "yaml": "2.9.0"
+  }
+}
