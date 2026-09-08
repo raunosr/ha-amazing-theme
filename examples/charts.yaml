@@ -1,0 +1,43 @@
+# Optional examples for a new manual dashboard. Replace every *_replace_me entity.
+# Native charts use graph-color-1..8 by series order when no color is specified.
+# An explicit per-entity color keeps meaning stable when entities are reordered.
+views:
+  - title: Amazing-kaaviot
+    path: amazing-charts
+    theme: Amazing
+    type: sections
+    max_columns: 2
+    sections:
+      - type: grid
+        cards:
+          - type: heading
+            heading: Lämpötilat
+          - type: history-graph
+            title: Lämpötilat · teeman sarjavärit
+            hours_to_show: 24
+            entities:
+              - entity: sensor.indoor_temperature_replace_me
+                name: Sisällä
+              - entity: sensor.outdoor_temperature_replace_me
+                name: Ulkona
+            grid_options:
+              columns: full
+              rows: auto
+      - type: grid
+        cards:
+          - type: heading
+            heading: Energia
+          - type: statistics-graph
+            title: Sähkön hinta · lämmin keltainen
+            chart_type: bar
+            period: hour
+            days_to_show: 1
+            stat_types:
+              - mean
+            entities:
+              - entity: sensor.electricity_price_replace_me
+                name: Sähkön hinta
+                color: "#f4cf81"
+            grid_options:
+              columns: full
+              rows: auto

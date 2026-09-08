@@ -2,12 +2,34 @@
 
 YAML jäsennetty oikealla YAML-parserilla; kaksoisavaimet tarkistettu. HACS-tiedostorakenne, manifestin tiedostonimi, esimerkit ja esikatselun vastaavuus teeman väreihin tarkistettu.
 
-198 teemamuuttujaa. 81 kontrastiparia hyväksytty. Tekstiparien tavoite ≥ 4,5:1, säätimien reunat ja osoittimet ≥ 3:1.
+206 teemamuuttujaa. 103 kontrastiparia hyväksytty. Tekstiparien tavoite ≥ 4,5:1, säätimien reunat, osoittimet ja kaaviosarjat ≥ 3:1. Hehkun vaalein kohta (#1a2b41) on tarkistettu erikseen.
 
 Tämä ei ole koko Home Assistantin WCAG-arvio eikä testi käynnissä olevassa HA:ssa. Koristeellista korttireunaa ja käytöstä poistettuja säätimiä ei lasketa tekstin tai aktiivisen säätimen kontrastilupaukseen.
 
 | Pari | Teksti / osoitin | Tausta | Suhde | Raja |
 | --- | --- | --- | ---: | ---: |
+| primary-text-color / card glow peak | #eef5fc | #1a2b41 | 13.03:1 | 4.5:1 |
+| secondary-text-color / card glow peak | #b1c3d7 | #1a2b41 | 7.95:1 | 4.5:1 |
+| primary-color / card glow peak | #9fe5cf | #1a2b41 | 9.95:1 | 4.5:1 |
+| error-color / card glow peak | #ff9b9b | #1a2b41 | 7.10:1 | 4.5:1 |
+| warning-color / card glow peak | #f4cf81 | #1a2b41 | 9.61:1 | 4.5:1 |
+| info-color / card glow peak | #86c4ff | #1a2b41 | 7.75:1 | 4.5:1 |
+| graph-color-1 / card | #9fe5cf | #111e30 | 11.65:1 | 3:1 |
+| graph-color-1 / card glow peak | #9fe5cf | #1a2b41 | 9.95:1 | 3:1 |
+| graph-color-2 / card | #86c4ff | #111e30 | 9.07:1 | 3:1 |
+| graph-color-2 / card glow peak | #86c4ff | #1a2b41 | 7.75:1 | 3:1 |
+| graph-color-3 / card | #f4cf81 | #111e30 | 11.25:1 | 3:1 |
+| graph-color-3 / card glow peak | #f4cf81 | #1a2b41 | 9.61:1 | 3:1 |
+| graph-color-4 / card | #b5a7e8 | #111e30 | 7.71:1 | 3:1 |
+| graph-color-4 / card glow peak | #b5a7e8 | #1a2b41 | 6.59:1 | 3:1 |
+| graph-color-5 / card | #ff9b9b | #111e30 | 8.32:1 | 3:1 |
+| graph-color-5 / card glow peak | #ff9b9b | #1a2b41 | 7.10:1 | 3:1 |
+| graph-color-6 / card | #79d5dc | #111e30 | 9.87:1 | 3:1 |
+| graph-color-6 / card glow peak | #79d5dc | #1a2b41 | 8.44:1 | 3:1 |
+| graph-color-7 / card | #e8b895 | #111e30 | 9.36:1 | 3:1 |
+| graph-color-7 / card glow peak | #e8b895 | #1a2b41 | 8.00:1 | 3:1 |
+| graph-color-8 / card | #9caef5 | #111e30 | 7.82:1 | 3:1 |
+| graph-color-8 / card glow peak | #9caef5 | #1a2b41 | 6.68:1 | 3:1 |
 | primary-text-color / primary-background-color | #eef5fc | #0b1523 | 16.67:1 | 4.5:1 |
 | secondary-text-color / primary-background-color | #b1c3d7 | #0b1523 | 10.17:1 | 4.5:1 |
 | primary-color / primary-background-color | #9fe5cf | #0b1523 | 12.73:1 | 4.5:1 |

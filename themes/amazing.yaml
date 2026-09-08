@@ -30,12 +30,24 @@ Amazing:
   divider-color: "#2c4057"
   outline-color: "#7890a8"
   outline-hover-color: "#b1c3d7"
-  ha-card-background: "#111e30"
+  # A fixed-size, subtle highlight stays in the corner on large and small cards.
+  # Keep card-background-color solid: dialogs and chart tooltips use it as a color.
+  ha-card-background: "radial-gradient(ellipse 280px 210px at 100% 0%, rgba(134, 196, 255, 0.08), transparent 72%), #111e30"
   ha-card-border-color: "#2c4057"
   ha-card-border-width: "1px"
   ha-card-border-radius: "24px"
   ha-card-box-shadow: "none"
   ha-card-header-color: "#eef5fc"
+
+  # Native history/statistics charts assign these by series order, not domain.
+  graph-color-1: "#9fe5cf"
+  graph-color-2: "#86c4ff"
+  graph-color-3: "#f4cf81"
+  graph-color-4: "#b5a7e8"
+  graph-color-5: "#ff9b9b"
+  graph-color-6: "#79d5dc"
+  graph-color-7: "#e8b895"
+  graph-color-8: "#9caef5"
 
   # Navigation and application chrome.
   sidebar-background-color: "#0e1a2a"
