@@ -76,9 +76,11 @@ Avaa [preview/index.html](preview/index.html) paikallisessa selaimessa. Verkkoyh
 
 ## Yhteensopivuus ja tarkistukset
 
-YAML, HACS-paketin paikallinen rakenne ja 81 väriparin kontrastit on tarkistettu. Esikatselu on testattu viidellä leveydellä 320–1440 px. **Teemaa ei ole vielä kokeiltu käynnissä olevassa Home Assistantissa eikä HACS-latauksena.**
+YAML, HACS-paketin paikallinen rakenne ja 81 väriparin kontrastit on tarkistettu. Esikatselu on testattu viidellä leveydellä 320–1440 px. GitHubin HACS- ja teemavalidointi ovat läpäisseet tarkistukset.
 
-Home Assistantin sisäiset tyylimuuttujat voivat muuttua. Kolmannen osapuolen kortti, joka määrittelee värinsä itse, voi ohittaa teeman. Teema ei vaadi Amazing Weather Cardia eikä muuta sen ohjelmakoodia.
+**Käyttäjä vahvisti 8.9.2026 kokeilleensa teemaa käynnissä olevassa Home Assistantissa.** Toimitettu dashboard-kuva havainnollistaa teemaa aidossa HA-käyttöliittymässä. HA- ja frontend-versioita sekä asennustapaa ei ole vielä ilmoitettu, joten HACS-latausta ei ole vahvistettu. Dialogien, säätimien ja mobiilikäytön kattavat tarkistukset ovat edelleen avoimia. [Testimerkintä ja jatkotarkistukset](docs/COMPATIBILITY.md#käyttäjän-ha-kokeilu-892026).
+
+Home Assistantin sisäiset tyylimuuttujat voivat muuttua. Kolmannen osapuolen kortti, joka määrittelee värinsä itse, voi ohittaa teeman. Teema ei vaadi Amazing Weather Cardia eikä muuta sen ohjelmakoodia. Sääkortin oikean yläkulman hehku kuuluu kortin omaan ulkoasuun; Amazing 0.1.0:n yleinen korttipinta on tasainen navy.
 
 Lisätiedot: [yhteensopivuus ja HA-kokeilun lista](docs/COMPATIBILITY.md), [kontrastiraportti](docs/VALIDATION.md), [esikatselun testit](docs/PREVIEW-QA.md).
 
@@ -100,4 +102,4 @@ Esikatselun käyttöliittymävärit generoidaan samasta YAML:sta. Sääkuvitus o
 
 Väripaletti ja 24 px:n korttipyöristys perustuvat [Amazing Weather Card v0.1.0:n](https://github.com/raunosr/ha-amazing-weather-card/releases/tag/v0.1.0) `src/styles.ts`-tiedostoon. Tässä paketissa ei ole sääkortin ohjelmakoodia eikä käyttäjän HA-konfiguraatiota. Lisenssi: [MIT](LICENSE).
 
-*English: A standalone dark Home Assistant theme with navy surfaces and mint accents. In HACS, add `https://github.com/raunosr/ha-amazing-theme` as a custom repository of type **Theme**, then download Amazing Theme. Enable the frontend theme loader shown above, reload themes, and select **Amazing** in your profile or set `theme: Amazing` on a dashboard view. The offline preview is an illustration, not a live HA screenshot. Live Home Assistant and HACS installation testing is still pending.*
+*English: A standalone dark Home Assistant theme with navy surfaces and mint accents. In HACS, add `https://github.com/raunosr/ha-amazing-theme` as a custom repository of type **Theme**, then download Amazing Theme. Enable the frontend theme loader shown above, reload themes, and select **Amazing** in your profile or set `theme: Amazing` on a dashboard view. A user reported testing the theme in a running Home Assistant instance on 2026-09-08 and supplied a dashboard screenshot. HA/frontend versions and the installation method have not been reported; HACS download testing and comprehensive dialog, control and mobile checks remain unconfirmed. The screenshots bundled in this repository still show the offline preview.*

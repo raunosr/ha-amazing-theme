@@ -26,16 +26,33 @@ Koristeellinen `#2c4057`-korttireuna on tarkoituksella hienovarainen. Se ei ole 
 - YAML-parseri, manifesti, teemahakemiston rakenne ja asennusesimerkit tarkistettiin paikallisesti.
 - Kontrastiparit on laskettu sRGB:n suhteellisella luminanssilla; raportti: [VALIDATION.md](VALIDATION.md).
 - Esikatselu testattiin paikallisessa selaimessa; raportti: [PREVIEW-QA.md](PREVIEW-QA.md).
+- Käyttäjä vahvisti 8.9.2026 teeman kokeilun aidossa Home Assistantissa ja toimitti dashboard-kuvan; tarkempi rajaus alla.
 
 GitHubin HACS- ja teemavalidoinnin ajantasaiset tulokset: [Validation](https://github.com/raunosr/ha-amazing-theme/actions/workflows/validate.yaml). HACS-validaattori tarkistaa repositorion myös verkosta.
 
-Ei suoritettu: asennus käyttäjän HA:han, aidot HA-komponentit selaimessa, HACS-lataus tai mobiilin Companion-sovellus. Näiden tuloksia ei voi päätellä HTML-esikatselusta tai repositoriovalidoinnista.
-
 HA:n dokumentaatio takaa ensisijaisesti pää-/korostusvärit ja dokumentoidut tilavärit. Muiden tyylimuuttujien toiminta voi muuttua julkaisujen välillä. Nykyisiä ja vanhempia muuttujia on siksi mukana rinnakkain. Manifestiin ei asetettu todentamatonta HA-vähimmäisversiota. [Virallinen huomautus teemamuuttujista](https://www.home-assistant.io/integrations/frontend/#unsupported-theme-variables).
 
-## Kokeilu aidossa HA:ssa
+## Käyttäjän HA-kokeilu 8.9.2026
 
-Suorita itse tai erikseen valtuutetussa testiympäristössä:
+| Tieto | Kirjattu havainto |
+| --- | --- |
+| Testauksen vahvistus | Käyttäjä ilmoitti testanneensa teemaa käynnissä olevassa Home Assistantissa. |
+| Julkaisutilanne | Raportointihetken julkaistu teema oli Amazing 0.1.0. |
+| Näyttö | Käyttäjän toimittama kuva aidosta HA-dashboardista. |
+| Ulkoasu | Kuvassa näkyvät tumma navy-tausta, pyöristetyt kortit, vaalea teksti ja mintun sävyjä. Näkymässä on muun muassa sää-, kello- ja kaaviokortteja. |
+| Home Assistant / frontend | Versioita ei ilmoitettu. |
+| Asennustapa | Ei ilmoitettu; HACS-latausta tai päivitystä ei ole vahvistettu. |
+| Selain / käyttöjärjestelmä | Ei ilmoitettu. |
+
+Tämä on käyttäjän raportoima kokeilu ja dashboardin visuaalinen havainto. Se ei vahvista kaikkien korttien toiminnallisuutta, jokaista teemamuuttujaa tai alla olevan tarkistuslistan läpäisyä. Kuvasta ei voi päätellä profiili- ja näkymäteeman keskinäistä toimintaa.
+
+Amazing Weather Cardin oikean yläkulman hehku on kortin oma taustatehoste. Amazing 0.1.0 asettaa yleiseksi korttipinnaksi tasaisen `#111e30`-värin. Korttikohtaiset liukuvärit, kaaviovärit, akselien muotoilu ja dashboardin asettelu voivat vaatia kyseisen kortin tai näkymän asetuksia.
+
+Repositorion mukana olevat kuvakaappaukset ovat edelleen offline-esikatselusta. Käyttäjän HA-kuvaa käytettiin havaintojen kirjaamiseen.
+
+## Avoimet jatkotarkistukset
+
+Kirjaa seuraavien tarkistusten todelliset tulokset erikseen. Koko listaa ei ole vahvistettu käyttäjän kokeilussa:
 
 1. Asenna tiedosto ja varmista, että valikossa näkyy yksi `Amazing`-teema.
 2. Valitse teema testiprofiilissa. Tarkista sidebar, asetussivu ja linkit.
@@ -45,7 +62,9 @@ Suorita itse tai erikseen valtuutetussa testiympäristössä:
 6. Vaihda profiili takaisin entiseen teemaan ja valitse `Amazing` vain demodashboardin näkymälle. Tarkista myös siirtyminen toiseen näkymään ja takaisin. Sovellustason dialogin profiiliväritys on eri asia kuin näkymän korttiväritys.
 7. Tarkista tumma ja vaalea ympäröivä profiili, puhelin ja Companion-sovellus. Palauta testin jälkeen aiemmat valinnat.
 
-Tallenna testattu HA- ja frontend-versio tähän tiedostoon. Julkaisukuvat saa korvata aidon HA:n kuvilla vain, jos kuvissa käytetään demotietoja.
+8. Vahvista asennustapa. Jos käytät HACS:ia, kokeile myös lataus ja myöhemmin teemaversion päivitys.
+
+Täydennä yllä olevaan testimerkintään HA- ja frontend-versio, asennustapa, selain sekä tarkistetut kortit ja toiminnot, kun tiedot ovat saatavilla. Julkaisukuvat saa korvata aidon HA:n kuvilla vain, jos kuvissa käytetään demotietoja.
 
 ## Lähteet
 
