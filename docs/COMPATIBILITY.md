@@ -10,7 +10,8 @@ Värikerrokset:
 | --- | --- | --- |
 | Perusvärit | `primary-color`, `accent-color` | Minttu ja sateensininen |
 | Pinnat ja teksti | `card-background-color`, `primary-text-color` | Alkuperäisen sääkortin tumma paletti |
-| Natiivikortit | `ha-card-*` | 24 px kulmat, 1 px hillitty reuna |
+| Natiivikortit | `ha-card-*` | 24 px kulmat, 1 px hillitty reuna ja 8 % sininen kulmahehku |
+| Kaaviot | `graph-color-1` … `graph-color-8` | Sarjajärjestyksen värit; korttikohtainen väri voi ohittaa ne |
 | Vanhemmat säätimet | `input-*`, `mdc-theme-*` | Kentät, valitsimet, dialogit ja luettavat painikkeet |
 | Nykyiset komponentit | `ha-color-*`, `ha-switch-*`, `ha-slider-*` | Myös Web Awesomeen perustuvien komponenttien sävyt |
 
@@ -50,21 +51,40 @@ Amazing Weather Cardin oikean yläkulman hehku on kortin oma taustatehoste. Amaz
 
 Repositorion mukana olevat kuvakaappaukset ovat edelleen offline-esikatselusta. Käyttäjän HA-kuvaa käytettiin havaintojen kirjaamiseen.
 
+## Suora HA-testi 8.9.2026
+
+Amazing 0.2.0:n julkaisuehdokasta testattiin käyttäjän osoittamassa, erillisessä Sections-näkymässä. Teema ei lisää näitä kortteja automaattisesti.
+
+| Kohde | Tulos / menetelmä |
+| --- | --- |
+| HA | Core 2026.8.3, HAOS 18.2, HACS 2.0.5. Frontend-paketin erillistä versionumeroa ei tallennettu. |
+| Selain | Codexin Chromium-pohjainen selain Windowsissa; mitattu näkymä 1699 × 1272 CSS-pikseliä. |
+| Asennus | HACS:n asennusluettelossa Amazing Theme v0.1.0. Julkaisuehdokkaan YAML päivitettiin hallittuun tiedostoon varmuuskopion jälkeen, SHA256 varmistettiin ja teemat ladattiin uudelleen. Tämä vaihe oli tiedostopäivitys, ei HACS-versionpäivitys. |
+| Teematiedosto | Testatun YAML:n SHA256: `e9dda07cf87a9fb478ad7ab7a8e82410e6101bd4375f6c9c27e47ecd88d666c0`. |
+| Näkymä | Amazing valittuna vain testinäkymään, ympäröivä profiili vaalea. Muut näkymät säilytettiin. |
+| Amazing Weather Card | HACS:n asennusluettelossa 0.2.1, `theme: auto`. Nykytila, 24 h / 6 pv ennustejakson vaihto ja käyrät renderöityivät. Kortin ulkopinnalla varmistettiin sama hillitty hehku kuin natiivikorteissa. |
+| History Graph | Minttu ja sininen sarja piirtyivät. Legendan valinnalla piilotettiin sininen sarja, nähtiin minttu käyrä ja palautettiin molemmat sarjat. |
+| Statistics Graph | Tuntikeskiarvojen pylväät renderöityivät eksplisiittisellä lämpimällä keltaisella `#f4cf81`. |
+| Sensor / Tile / Markdown | Sisältö renderöityi; korttien laskettu tausta oli navy + 8 %:n sininen liukuväri. Sensor-kortin oma käyrä käytti sinistä korostusväriä. |
+| Button | Mittauspainike avasi more-info-dialogin; Escape sulki sen. Painikkeilla ei ohjattu kodin laitteita. |
+| Sovellustason dialogi | Vaalea more-info-dialogi seurasi profiilia. Tämä on näkymäteeman rajaus; yhtenäiseen sivupalkkiin ja dialogeihin valitse Amazing myös profiilissa. |
+| CSS-tarkistus | Korttien laskettu tausta ja kaikki kahdeksan graph-color-muuttujaa vastasivat YAML:ia. Otsikkokortin läpinäkyvyys säilyi. |
+| Selainkonsoli | Ympäristössä esiintyi erillisiin custom-sidebar-, vertical-stack-in-card- ja lit-virtualizer-latauksiin liittyviä virheitä. Siksi ympäristöä ei raportoida virheettömäksi. Testatut kortit renderöityivät niistä huolimatta. |
+
+Natiivien viiva- ja pylväskaavioiden toiminta tarkistettiin; kaikkia HA:n kaaviotyyppejä tai kolmannen osapuolen kortteja ei testattu. Esimerkiksi omaa taustaa tai väriä käyttävä kortti voi ohittaa teeman. Värit määräytyvät sarjajärjestyksestä, ellei kortissa ole omaa väriasetusta; katso [APPEARANCE.md](APPEARANCE.md).
+
+Julkaisun jälkeinen HACS-päivityksen tulos kirjataan [v0.2.0:n julkaisutietoihin](https://github.com/raunosr/ha-amazing-theme/releases/tag/v0.2.0). Repositorion kuvat käyttävät vain esikatselun demotietoja; yksityistä HA-konfiguraatiota tai sen kuvia ei julkaista.
+
 ## Avoimet jatkotarkistukset
 
-Kirjaa seuraavien tarkistusten todelliset tulokset erikseen. Koko listaa ei ole vahvistettu käyttäjän kokeilussa:
+Seuraavat asiat eivät sisältyneet suoraan selainkokeeseen:
 
-1. Asenna tiedosto ja varmista, että valikossa näkyy yksi `Amazing`-teema.
-2. Valitse teema testiprofiilissa. Tarkista sidebar, asetussivu ja linkit.
-3. Tarkista natiivit Tile-, Entities-, Thermostat-, Markdown- ja Weather Forecast -kortit sekä yksi historianäkymä.
-4. Avaa more-info-dialogi ja korttieditori. Tarkista kentän teksti, vihjeteksti, valikko, virheilmoitus, valittu vaihtoehto ja tallennuspainikkeen kontrasti.
-5. Tarkista kytkimen molemmat tilat, liukusäädin ja näppäimistökohdistus. Tarkista käytöstä poistettu säädin erillisenä tilana.
-6. Vaihda profiili takaisin entiseen teemaan ja valitse `Amazing` vain demodashboardin näkymälle. Tarkista myös siirtyminen toiseen näkymään ja takaisin. Sovellustason dialogin profiiliväritys on eri asia kuin näkymän korttiväritys.
-7. Tarkista tumma ja vaalea ympäröivä profiili, puhelin ja Companion-sovellus. Palauta testin jälkeen aiemmat valinnat.
+- Fyysinen puhelin ja Companion-sovellus. Selaimen 390 px:n kokopyyntö ei muuttanut mitattua leveyttä, joten sitä ei lasketa mobiilitestiksi.
+- Profiiliin valitun Amazing-teeman kaikkien asetussivujen, dialogieditorien ja kenttätilojen tarkistus.
+- Thermostat ja oikeiden laitteiden kytkimet/liukusäätimet sekä niiden kaikki tilat.
+- Kaikkien kaaviotyyppien, kahdeksan yhtäaikaisen käyrän ja värinäön poikkeamien kattava arvio.
 
-8. Vahvista asennustapa. Jos käytät HACS:ia, kokeile myös lataus ja myöhemmin teemaversion päivitys.
-
-Täydennä yllä olevaan testimerkintään HA- ja frontend-versio, asennustapa, selain sekä tarkistetut kortit ja toiminnot, kun tiedot ovat saatavilla. Julkaisukuvat saa korvata aidon HA:n kuvilla vain, jos kuvissa käytetään demotietoja.
+Paikallisen esikatselun aiempi mobiilitesti on erillinen havainto: [PREVIEW-QA.md](PREVIEW-QA.md). Kontrastilaskenta ei yksin takaa kaikkien HA-komponenttien saavutettavuutta.
 
 ## Lähteet
 

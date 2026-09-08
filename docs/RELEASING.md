@@ -17,7 +17,7 @@ Julkaisutagit `v*` on suojattu muutoksilta ja poistamiselta. Korjaukset julkaist
 
 ## Automaattiset tarkistukset
 
-- `Theme validation`: YAML, esimerkit, manifesti, esikatselun vastaavuus ja 81 kontrastiparia.
+- `Theme validation`: YAML, esimerkit, manifesti, esikatselun vastaavuus ja 103 kontrastiparia (mukaan lukien hehkun vaalein kohta ja kahdeksan kaaviosarjaa).
 - `HACS validation`: virallinen HACS-validaattori kategoriassa `theme`, mukaan lukien GitHub-metatiedot.
 - Dependabot seuraa npm-kehitysriippuvuutta ja GitHub Actions -viitteitä viikoittain.
 

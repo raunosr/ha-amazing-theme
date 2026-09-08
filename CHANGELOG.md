@@ -1,9 +1,12 @@
 # Muutosloki
 
-## Julkaisematon
+## 0.2.0 — 2026-09-08
 
-- Dokumentoitu käyttäjän 8.9.2026 vahvistama kokeilu aidossa Home Assistantissa sekä dashboard-kuvan havainnot.
-- Täsmennetty vielä avoimet testitiedot ja Amazing Weather Cardin oman hehkun ero teeman yleiseen korttipintaan.
+- Hillitty 8 %:n sininen hehku teemataustaa käyttävien korttien oikeaan yläkulmaan. Dialogien ja vihjeiden peruspinta säilyy yksivärisenä.
+- Kahdeksan yhteensopivaa natiivikaavioiden sarjaväriä sekä esimerkit kiinteille lämpötila-, sade- ja hintaväreille.
+- 103 kontrastitarkistusta, mukana hehkun vaalein kohta ja kaikkien kahdeksan kaaviosarjan erottuminen taustasta.
+- Suora selainkoe HA Core 2026.8.3:ssa Amazing Weather Card 0.2.1:llä ja natiivikorteilla.
+- Täydennetyt asennus-, päivitys-, ulkoasu- ja yhteensopivuusohjeet.
 
 ## 0.1.0 — 2026-09-08
 
